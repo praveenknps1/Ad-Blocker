@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Ad Blocker",
+    "version": "1.0",
+    "description": "A simple ad blocker extension using React",
+    "icons": {
+      "128": "public/icon.png"
+    },
+    "action": {
+      "default_popup": "dist/dist/popup.html",
+      "default_icon": "public/icon.png"
+    },
+    "background": {
+      "service_worker": "dist/dist/background.js"
+    },
+    "permissions": [
+      "storage",
+      "activeTab",
+      "scripting"
+    ],
+    "host_permissions": [
+      "<all_urls>"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["dist/dist/content.js"]
+      }
+    ]
+  }
+  
